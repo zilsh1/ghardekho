@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aligned Cards</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    .category-description {
+      width: 100%;
+      height: 280px;
+      border-radius: 20px;
+      margin-bottom: 1rem;
+      /* Add some space between the image and the card */
+      transform: translateY(2.2rem);
+      position: relative;
+      transition: transform 0.3s ease;
+    }
+
+    .image-text {
+      position: absolute;
+      top: 50px;
+      /* Adjust this value to position the text */
+      left: 20px;
+      /* Adjust this value to position the text */
+      color: white;
+      font-size: 16px;
+      padding: 8px;
+      border-radius: 15px;
+      font-weight: bold;
+      z-index: 1;
+      /* Ensure text appears above the image */
+    }
+
+    .item {
+      background-color: rgba(255, 255, 255, 0.5);
+      width: calc(100% - calc(2.9rem));
+      max-width: 580px;
+      padding: 1.2rem;
+      top: -6%;
+      margin-left: auto;
+      margin-right: auto;
+      flex-direction: column;
+      border-radius: 1.7rem;
+      box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.2);
+      transform: translateY(-1rem);
+      backdrop-filter: blur(1.5rem);
+      position: relative;
+      /* Ensure proper stacking context */
+      transition: transform 0.3s ease;
+    }
+
+    .col-md-4:hover .category-description,
+    .col-md-4:hover .item {
+      transform: translateY(-0.5rem);
+    }
+
+    @media (min-width: 992px) {
+      .col-md-4 {
+        flex: 0 0 33.33%;
+        max-width: 33.33%;
+      }
+    }
+
+    /* Media query for smaller screens */
+    @media (max-width: 991.98px) {
+      .col-md-4 {
+        flex: 0 0 50%;
+        max-width: 50%;
+      }
+    }
+
+    /* Media query for extra small screens */
+    @media (max-width: 576px) {
+      .col-md-4 {
+        flex: 0 0 100%;
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="position-relative">
+          <img class="category-description img-fluid" src="buy1.jpeg" alt="hello">
+          <div class="image-text bg-success">Buy</div>
+        </div>
+        <div class="item">
+          <h2 class="text-success">Kaveri soham Vivanta</h2>
+          <h4 class="my-4">3BHK Apartment, Shilaj, ahmedabad </h4>
+          <h5>80.01-97.74 Lacs</h5>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="position-relative">
+          <img class="category-description img-fluid" src="buy2.jpeg" alt="hello">
+          <div class="image-text bg-success">Buy</div>
+        </div>
+        <div class="item">
+          <h2 class="text-success">Madhav opulences </h2>
+          <h4 class="my-4">4BHK Apartment, vesu, surat</h4>
+          <h5>97.74 Lacs-1.2 Cr</h5>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="position-relative">
+          <img class="category-description img-fluid" src="buy3.jpg" alt="hello">
+          <div class="image-text bg-success">Buy</div>
+        </div>
+        <div class="item">
+          <h2 class="text-success">Courtyard by Marriott</h2>
+          <h4 class="my-4">2BHK Apartment, Savli, Vadodara</h4>
+          <h5>80.01-97.74 Lacs</h5>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="position-relative">
+          <img class="category-description img-fluid" src="buy4.jpeg" alt="hello">
+          <div class="image-text bg-success">Buy</div>
+        </div>
+        <div class="item">
+          <h2 class="text-success">Shiv Elite</h2>
+          <h4 class="my-4">3BHK, Sama, Vadodara</h4>
+          <h5>1-1.5 cr</h5>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="position-relative">
+          <img class="category-description img-fluid" src="buy5.jpg" alt="hello">
+          <div class="image-text bg-success">Buy</div>
+        </div>
+        <div class="item">
+          <h2 class="text-success">Rangoli Greens</h2>
+          <h4 class="my-4">3BHK Apartment, Subhanpura, Vadodara</h4>
+          <h5>65.43-78.92 Lacs</h5>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="position-relative">
+          <img class="category-description img-fluid" src="buy6.jpg" alt="hello">
+          <div class="image-text bg-success">Buy</div>
+        </div>
+        <div class="item">
+          <h2 class="text-success">The Bliss Residency</h2>
+          <h4 class="my-4">2BHK Apartment, Waghodia, Vadodara</h4>
+          <h5>40.25-50.89 Lacs</h5>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="position-relative">
+          <img class="category-description img-fluid" src="buy7.png" alt="hello">
+          <div class="image-text bg-success">Buy</div>
+        </div>
+        <div class="item">
+          <h2 class="text-success">Green County</h2>
+          <h4 class="my-4">3BHK Apartment, Ajwa Road, Vadodara</h4>
+          <h5>60.12-72.45 Lacs</h5>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="position-relative">
+          <img class="category-description img-fluid" src="buy8.jpg" alt="hello">
+          <div class="image-text bg-success">Buy</div>
+        </div>
+        <div class="item">
+          <h2 class="text-success">Sai Arpan Residency</h2>
+          <h4 class="my-4">2BHK Apartment, Satellite, Ahmedabad</h4>
+          <h5>50.65-63.78 Lacs</h5>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="position-relative">
+          <img class="category-description img-fluid" src="buy9.jpg" alt="hello">
+          <div class="image-text bg-success">Buy</div>
+        </div>
+        <div class="item">
+          <h2 class="text-success">Shivalik Arcade</h2>
+          <h4 class="my-4">3BHK Apartment, Vastrapur,Ahmedabad</h4>
+          <h5>75.32-85.79 Lacs</h5>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</body>
+
+</html>

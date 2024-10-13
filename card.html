@@ -1,0 +1,69 @@
+<html>
+  <head>
+    <style>
+      .image-container {
+        position: relative;
+        max-width: 450px; /* Set a maximum width for the container if needed */
+      }
+      .image-container:hover {
+        transform: scale(1.1); /* Zoom in effect on hover */
+        transition: 1s;
+      }
+      .text-overlay {
+        position: absolute;
+        top: 70%;
+        width: 70%;
+        border-radius: 10px;
+        background-color: white; /* White background with some transparency */
+        color: black;
+        padding: 10px;
+        left: 3.5rem;
+        box-shadow: inset 0 0 10px 5px rgba(0, 0, 0, 0.5);
+      }
+      .text-overlay .text-content
+      {
+        margin-top: 3rem;
+        margin-left: 2rem;
+      }
+      .visit-image
+      {
+        position: absolute;
+        top: 60%;
+        width: 20%;
+        border-radius: 100%;
+        z-index: 1;
+        background-color: white; /* White background with some transparency */
+        box-shadow: inset 0 0 10px 5px rgba(0, 0, 0, 0.5);
+        padding: 10px;
+        left: 4.5rem;
+      }
+      .text-part {
+        position: absolute;
+        top: 7%;
+        height: 7%;
+        width: 12%;
+        border-radius: 9px;
+        background-color: rgb(121, 190, 139); /* White background with some transparency */
+        color: black;
+        padding: 7px;
+        left: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <a href="">
+    <div class="image-container">
+      <img src="property-4.jpg" alt="Property Image" height="250px" width="450px">
+      <img src="card1.jpg" class="visit-image rounded-circle" >
+      <div class="text-part">For Buy</div>
+      <div class="text-overlay">
+        <div class="text-content">
+          <div style="color: rgb(22, 160, 73);font-weight: bolder;margin-bottom: 10px;margin-bottom: 20px;font-size: 24px;">Kaveri soham Vivanta</div>
+          <div style="margin-bottom: 20px;">3BHK Apartment</div>
+          <div style="font-weight: bolder;margin-bottom: 20px;">80.01-97.74 Lacs</div>
+        </div>
+      </div>
+    </div>
+  </a>
+  </body>
+</html>

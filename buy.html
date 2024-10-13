@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real Estate Website</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+      .video-container {
+          position: relative;
+          width: 100%;
+          margin-top: 0;
+          height: 0;
+          padding-top: 56.25%; /* 16:9 aspect ratio */
+          border-radius: 20px;
+          overflow: hidden;
+      }
+
+      .video-container video {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          top: 0;
+          left: 0;
+          object-fit: cover;
+      }
+
+      .tab-content {
+          padding-top: 20px;
+      }
+
+      .nav-pills .nav-link {
+          border-radius: 20px;
+          margin-right: 10px;
+          transition: all 0.3s ease;
+          color: #fff; /* Change text color */
+          background-color: #28a745; /* Change background color to green */
+          border-color: #28a745; /* Change border color to green */
+      }
+
+      .nav-pills .nav-link.active {
+          background-color: #007bff;
+      }
+
+      .nav-pills .nav-link.active:hover {
+          background-color: #0056b3;
+      }
+
+      .category-description {
+          width: 100%;
+          height: 280px;
+          border-radius: 20px;
+          margin-bottom: 1rem;
+          transform: translateY(2.2rem);
+          position: relative;
+      }
+
+      .image-text {
+          position: absolute;
+          top: 50px;
+          left: 20px;
+          color: white;
+          font-size: 16px;
+          padding: 8px;
+          border-radius: 15px;
+          font-weight: bold;
+          z-index: 1;
+      }
+
+      .item {
+          background-color: rgba(255, 255, 255, 0.5);
+          width: calc(100% - calc(2.9rem));
+          max-width: 580px;
+          padding: 1.2rem;
+          top: -6%;
+          margin-left: 25px;
+          flex-direction: column;
+          border-radius: 1.7rem;
+          box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.2);
+          transform: translateY(-1rem);
+          backdrop-filter: blur(1.5rem);
+          position: relative;
+      }
+
+      .image-at:hover {
+          transform: scale(1.09);
+          transition: 1s;
+      }
+
+      @media only screen and (max-width: 377px) {
+          .category-description {
+              height: 200px;
+          }
+      
+          .textpart {
+              font-size: 12px;
+          }
+      }
+
+      .nav-bar-black {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 90%;
+          max-width: 800px;
+          background-color: rgba(3, 11, 4, 0.582);
+          padding: 20px;
+          text-align: center;
+          border-radius: 20px;
+          box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+          z-index: 2;
+      }
+
+      .nav-bar-white {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          z-index: 2;
+          transform: translate(-50%, -50%);
+          width: 90%;
+          max-width: 400px;
+          background-color: rgba(229, 220, 220, 0.671);
+          padding: 20px;
+          border-radius: 20px;
+          box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+          margin-top: 52px;
+          text-align: center;
+      }
+
+      .nav-bar-white ul {
+          list-style: none;
+          display: flex;
+          justify-content: center;
+      }
+
+      .nav-bar-white ul li a {
+          color: #000;
+          text-decoration: none;
+          font-size: 18px;
+          padding-right: 50px;
+      }
+
+      @media (max-width: 320px) {
+          .nav-pills .nav-link {
+              font-size: 14px;
+              padding: 0.5rem 1rem;
+          }
+      }
+
+      .nav-pills .nav-link {
+          border-radius: 20px;
+          margin-right: 10px;
+          transition: all 0.3s ease;
+      }
+
+  </style>
+</head>
+<body>
+    <section class="py-5">
+        <div class="video-container">
+          <video src="video.mp4" autoplay muted loop></video>
+          <div class="nav-bar-black rounded-pill">
+           <div style="color: white;">Explore our options to Buy or Sell goods and services.</div>
+          </div>
+            <div class="nav-bar-white" style="background-color: rgba(229, 220, 220, 0.671);">
+                <ul class="nav nav-pills justify-content-center ">
+                    <li class="nav-item me-2 ">
+                        <a class="btn btn-outline-primary active" data-bs-toggle="pill" href="#tab-1">For Sell</a>
+                    </li>
+                    <li class="nav-item me-2">
+                        <a class="btn btn-outline-primary" data-bs-toggle="pill" href="#tab-2">For Rent</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="tab-content">
+            <div id="tab-1" class="tab-pane fade show p-0 active">
+              <div class="container mt-2">
+                <div class="row">
+                  <div class="col-md image-at">
+                    <a href="house.html" style="text-decoration: none;">
+                    <div class="position-relative">
+                      <img class="category-description img-fluid" src="buy1.jpeg" alt="hello">
+                      <div class="image-text bg-success">Buy</div>
+                    </div>
+                    <div class="item">
+                      <h2 class="text-success textpart">Kaveri soham Vivanta</h2>
+                      <h4 class="my-4 textpart">3BHK Apartment, Shilaj, ahmedabad </h4>
+                      <h5 class="textpart">80.01-97.74 Lacs</h5>
+                    </div>
+                  </a>
+                  </div>
+                  <div class="col-md image-at">
+                    <a href="houseb2.html" style="text-decoration: none;">
+                    <div class="position-relative">
+                      <img class="category-description img-fluid" src="buy2.jpeg" alt="hello">
+                      <div class="image-text bg-success">Buy</div>
+                    </div>
+                    <div class="item">
+                      <h2 class="text-success textpart">Madhav opulences </h2>
+                      <h4 class="my-4 textpart">4BHK Apartment, vesu, surat</h4>
+                      <h5 class="textpart">97.74 Lacs-1.2 Cr</h5>
+                    </div>
+                    </a>
+                  </div>
+                  <div class="col-md image-at">
+                    <a href="houseb3.html" style="text-decoration: none;">
+                    <div class="position-relative">
+                      <img class="category-description img-fluid" src="buy3.jpg" alt="hello">
+                      <div class="image-text bg-success">Buy</div>
+                    </div>
+                    <div class="item">
+                      <h2 class="text-success textpart">Courtyard by Marriott</h2>
+                      <h4 class="my-4 textpart">2BHK Apartment, Savli, Vadodara</h4>
+                      <h5 class="textpart">80.01-97.74 Lacs</h5>
+                    </div>
+                  </div>
+                </div>
+              </a>
+              </div>
+          </div>
+            <div id="tab-2" class="tab-pane fade show p-0">
+              <div class="container mt-2">
+                <div class="row">
+                  <div class="col-md image-at">
+                    <a href="houser3.html" style="text-decoration: none;">
+                    <div class="position-relative">
+                      <img class="category-description img-fluid" src="rent1.jpg" alt="hello">
+                      <div class="image-text bg-success">Rent</div>
+                    </div>
+                    <div class="item">
+                      <h2 class="text-success textpart">Surya Signature</h2>
+                      <h4 class="my-4 textpart">5 BHK  Apartment, Vesu, Surat</h4>
+                      <h5 class="textpart">70,000/month</h5>
+                    </div>
+                    </a>
+                  </div>
+                  <div class="col-md image-at">
+                    <a href="houser3.html" style="text-decoration: none;">
+                    <div class="position-relative">
+                      <img class="category-description img-fluid" src="buy3.jpg" alt="hello">
+                      <div class="image-text bg-success">Rent</div>
+                    </div>
+                    <div class="item">
+                      <h2 class="text-success textpart">Courtyard by Marriott</h2>
+                      <h4 class="my-4 textpart">2BHK Apartment, Savli, Vadodara</h4>
+                      <h5 class="textpart">40,000/month</h5>
+                    </div>
+                    </a>
+                  </div>
+                  <div class="col-md image-at">
+                    <a href="houser1.html" style="text-decoration: none;">
+                    <div class="position-relative">
+                      <img class="category-description img-fluid" src="rent2.jpeg" alt="hello">
+                      <div class="image-text bg-success">Rent</div>
+                    </div>
+                    <div class="item">
+                      <h2 class="text-success textpart">Rajshree Samvar 2</h2>
+                      <h4 class="my-4 textpart">3BHK Apartment, science city, Ahmedabad</h4>
+                      <h5 class="textpart">40,000/month</h5>
+                    </div>
+                  </a>
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+            </div>
+        </div>
+    </section>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.9.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

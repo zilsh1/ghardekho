@@ -1,0 +1,638 @@
+<!-- Project title      : GharDekho
+     Enrollment number  : 22002171410064
+     Date               : 30, march, 2024
+     Subject            : Full stack development(Frontend)-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <title>Document</title>
+  <style>
+    .category-description {
+      width: 100%;
+      height: 280px;
+      border-radius: 20px;
+      /* Add some space between the image and the card */
+      transform: translateY(1.8rem);
+    }
+
+    .image-text {
+      position: absolute;
+      top: 50px;
+      /* Adjust this value to position the text */
+      left: 20px;
+      /* Adjust this value to position the text */
+      color: white;
+      font-size: 16px;
+      padding: 8px;
+      border-radius: 15px;
+      font-weight: bold;
+      z-index: 1;
+      /* Ensure text appears above the image */
+    }
+
+    .item {
+      background-color: rgba(255, 255, 255, 0.5);
+      width: calc(100% - calc(2.9rem));
+      max-width: 580px;
+      padding: 1.2rem;
+      top: -6%;
+      margin-left: 25px;
+      border-radius: 1.7rem;
+      box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.2);
+      transform: translateY(-1rem);
+      backdrop-filter: blur(1.5rem);
+      position: relative;
+      /* Ensure proper stacking context */
+    }
+
+    .image-at:hover {
+      transform: scale(1.09);
+      /* Zoom in effect on hover */
+      transition: 1s;
+    }
+
+    @media only screen and (max-width: 377px) {
+      .category-description {
+        height: 200px;
+        /* Adjusted height for smaller screens */
+      }
+
+      .textpart {
+        font-size: 12px;
+      }
+    }
+
+    .property-card:hover .property-card__front {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      background-color: rgb(121, 190, 139);
+      transition: transform 0.5s;
+    }
+
+    .property-card:hover .property-card__front img {
+      filter: brightness(0) saturate(100%) invert(1);
+      /* Add this line to make the image white on hover */
+    }
+
+    .property-card:hover .property-card__front .text-secondary {
+      filter: brightness(0) saturate(100%) invert(1);
+      /* Add this line to make the image white on hover */
+    }
+
+    .jou-container {
+      padding: 50px;
+      background-color: #212529;
+      color: #fff;
+      text-align: center;
+    }
+
+    .jou-container .abc {
+      width: 200px;
+      /* Adjust width as needed */
+      height: 200px;
+      /* Adjust height as needed */
+      border-radius: 50%;
+      margin: auto;
+      /* Center image */
+      /* Correct display */
+    }
+
+    .image-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      /* Responsive grid */
+      grid-gap: 10px;
+      margin-top: 20px;
+    }
+
+    .image-grid img {
+      width: 100%;
+      height: auto;
+      /* Maintain aspect ratio */
+    }
+
+    .social-icons {
+      margin-top: 30px;
+      justify-content: center;
+      /* Center icons */
+      display: flex;
+      /* Align icons inline */
+      /* Wrap icons on small screens */
+    }
+
+    .social-icons img {
+      width: 40px;
+      margin: 5px;
+      /* Adjust spacing around icons */
+    }
+    .col-md-6 img {
+      border-radius: 15px;
+      /* Add border radius to the image */
+    }
+
+    .col-md-6 h1 {
+      font-family: "Lato", sans-serif;
+      /* Change font family */
+      font-size: 36px;
+      /* Change font size */
+      font-weight: 300;
+      /* Change font weight */
+      font-style: normal;
+      /* Change font style to normal */
+      margin-bottom: 20px;
+      /* Add margin bottom */
+      color: #333;
+      /* Change text color */
+      transition: color 0.5s ease, transform 0.5s ;
+    }
+
+
+    .about li {
+      font-family: 'Arial', sans-serif;
+      font-size: 18px;
+      color: #555;
+      margin-bottom: 10px;
+      font-style: italic;
+    }
+
+    .about li:hover {
+      color: green;
+      /* Change text color to green on hover */
+      transform: translateY(-10px);
+      /* Translate the list items up by 10 pixels on hover */
+    }
+
+    .about h1:hover {
+      color: green;
+      /* Change text color to green on hover */
+      transform: translateY(-10px);
+      /* Translate the paragraph lines up by 5 pixels on hover */
+    }
+
+    .about img:hover {
+      transform: translateY(-10px);
+      /* Translate the paragraph lines up by 5 pixels on hover */
+      transition: 0.5s ease, transform 0.5s ease;
+      /* Add transition effect for color and transform */
+
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light shadow fixed-top m-2">
+    <div class="container">
+      <a class="navbar-brand" href="#"><img src="HousingLogo2.jpg" class="rounded-pill" width="40px"></a>
+      <h5>Ghar dekho</h5>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#team">Team</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Full Page Image Header with Vertically Centered Content -->
+  <header>
+    <div class="row align-items-center">
+      <div class="text-center">
+        <div class="container">
+          <div class="row">
+            <div class="container-fluid ">
+              <div class="row g-0 align-items-center flex-column-reverse flex-md-row">
+                <div class="col-md-6 p-5 mt-lg-5">
+                  <h1 class="display-5" style="font-weight: bolder;">Find A <span class="text-success">Perfect
+                      Home</span> To Live With Your Family</h1>
+                  <p class="animated fadeIn mb-4 pb-2">Discover your ideal home effortlessly with our housing website,
+                    offering an unparalleled and user-friendly
+                    platform that makes finding the perfect residence a seamless and enjoyable experience.</p>
+                  <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#myModal">
+                    login
+                  </button>
+
+                  <!-- The Modal -->
+                  <div class="modal" id="myModal">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+
+                        <!-- Modal Header -->
+                        <div class="modal-header">
+                          <h4 class="modal-title">login page</h4>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+                        <!-- Modal body -->
+                        <div  class="modal-body">
+                          <span class="error" id="err"></span>
+                          <form id="loginForm" action="/action_page.php">
+                            <div class="mb-3 mt-3">
+                              <label for="email" class="form-label" style="float: left;">Email:</label>
+                              <input type="email" class="form-control" id="email" placeholder="Enter email"
+                                name="email">
+                            </div>
+                            <div class="mb-3">
+                              <label for="pwd" class="form-label" style="float: left;">Password:</label>
+                              <input type="password" class="form-control" id="pwd" placeholder="Enter password"
+                                name="pswd">
+                            </div>
+                            <div class="form-check mb-3">
+                              <label class="form-check-label" style="float: left;">
+                                <input class="form-check-input" type="checkbox" name="remember"> Remember me
+                              </label>
+                            </div>
+                            <button type="submit" class="btn btn-primary m-3" href="abc.html">Login</button> <br>
+                            <h6 style="float: left;">if you are new user <a href="#" style="text-decoration: none;">?
+                                sign up</a> </h6>
+                          </form>
+                        </div>
+
+                        <!-- Modal footer -->
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div id="demo" class="carousel slide" data-bs-ride="carousel">
+
+                    <!-- Indicators/dots -->
+                    <div class="carousel-indicators">
+                      <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+                      <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+                      <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+                    </div>
+
+                    <!-- The slideshow/carousel -->
+                    <div class="carousel-inner">
+                      <div class="carousel-item active">
+                        <img src="carousel-1.jpg" alt="Los Angeles" style="width:100%">
+                      </div>
+                      <div class="carousel-item">
+                        <img src="carousel-2.jpg" alt="Chicago"  style="width:100%">
+                      </div>
+                      <div class="carousel-item">
+                        <img src="about.jpg" alt="Chicago" style="width:100%">
+                      </div>
+                    </div>
+
+                    <!-- Left and right controls/icons -->
+                    <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+                      <span class="carousel-control-prev-icon"></span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+                      <span class="carousel-control-next-icon"></span>
+                    </button>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="container-fluid bg-success mb-5" style="padding: 35px;">
+      <div class="row">
+        <div class="col-md-3">
+          <input type="text" class="form-control py-3" placeholder="Search Keyword">
+        </div>
+        <div class="col-md-3">
+          <select class="form-select py-3">
+            <option selected>Property Type</option>
+            <option value="1">Buy</option>
+            <option value="2">Sell</option>
+          </select>
+        </div>
+        <div class="col-md-3">
+          <select class="form-select py-3">
+            <option selected>Location</option>
+            <option value="1">Location 1</option>
+            <option value="2">Location 2</option>
+            <option value="3">Location 3</option>
+          </select>
+        </div>
+        <div class="col-md-3">
+          <button class="btn btn-dark w-100 py-3">Search</button>
+        </div>
+  </header>
+  <!-- Property type -->
+  <section class="m-5 ">
+    <div class="text-center">
+      <h1 class="mb-3">Property Types</h1>
+      <p>These notes provide a general overview of each property type.</p>
+    </div>
+    <div class="row">
+      <div class="col-md">
+        <a class="property-card d-block bg-light text-center p-3" href="second.html"
+          style="margin-bottom: 50px;text-decoration: none;">
+          <div class="p-4 property-card__front">
+            <div class="m-3">
+              <img src="icon-apartment.png" alt="Icon">
+            </div>
+            <h6 class="text-secondary">Apartment</h6>
+            <span class="text-black">175 Properties</span>
+          </div>
+        </a>
+      </div>
+      <div class="col-md">
+        <a class="property-card d-block bg-light text-center p-3" href="second.html"
+          style="margin-bottom: 50px;text-decoration: none;">
+          <div class="p-4 property-card__front">
+            <div class="m-3">
+              <img src="icon-villa.png" alt="Icon">
+            </div>
+            <h6 class="text-secondary">Villa</h6>
+            <span class="text-black">80 Properties</span>
+          </div>
+        </a>
+      </div>
+      <div class="col-md">
+        <a class="property-card d-block bg-light text-center p-3" href="second.html"
+          style="margin-bottom: 50px;text-decoration: none;">
+          <div class="p-4 property-card__front">
+            <div class="m-3">
+              <img src="icon-neighborhood.png" alt="Icon">
+            </div>
+            <h6 class="text-secondary">Bungalows</h6>
+            <span class="text-black">150 Properties</span>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md">
+        <a class="property-card d-block bg-light text-center p-3" href="second.html"
+          style="margin-bottom: 50px;text-decoration: none;">
+          <div class="p-4 property-card__front">
+            <div class="m-3">
+              <img src="icon-condominium.png" alt="Icon">
+            </div>
+            <h6 class="text-secondary">Farm House</h6>
+            <span class="text-black">120 Properties</span>
+          </div>
+        </a>
+      </div>
+      <div class="col-md">
+        <a class="property-card d-block bg-light text-center p-3" href="second.html"
+          style="margin-bottom: 50px;text-decoration: none;">
+          <div class="p-4 property-card__front">
+            <div class="m-3">
+              <img src="icon-apartment.png" alt="Icon">
+            </div>
+            <h6 class="text-secondary">PG</h6>
+            <span class="text-black">70 Properties</span>
+          </div>
+        </a>
+      </div>
+      <div class="col-md">
+        <a class="property-card d-block bg-light text-center p-3" href="second.html"
+          style="margin-bottom: 50px;text-decoration: none;">
+          <div class="p-4 property-card__front">
+            <div class="m-3">
+              <img src="icon-apartment.png" alt="Icon">
+            </div>
+            <h6 class="text-secondary">Pent House</h6>
+            <span class="text-black">100 Properties</span>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="py-5" id="about">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-6 about">
+            <img class="img-fluid w-100" src="about.jpg">
+          </div>
+          <div class="col-md-6 about ">
+            <h1 class="mb-4">Discover Your Ideal Property Destination</h1>
+            <ul>
+              <li>Discover your perfect home with our exceptional real estate platform. Featuring an extensive database,
+                we're your premier choice for finding a new home.</li>
+              <li>Your Trusted Haven for Property Discovery</li>
+              <li>Join Over 1000+ Daily Visitors on Their Path to Home Bliss</li>
+              <li>Empowering Over 10,000+ Users to Achieve Their Dream Homes</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Propert list -->
+    <h1 class="mb-3">Property Listing</h1>
+    <div class="row">
+      <div class="col-md">
+        <p>Explore your housing options with us! Whether you're looking to own your dream home or experience the
+          flexibility of renting, we offer a diverse range of properties to suit your lifestyle and preferences.</p>
+      </div>
+      <div class="col-md">
+        <ul class="nav nav-pills justify-content-end mb-5">
+          <li class="nav-item me-2">
+            <a class="btn btn-outline-primary  active" data-bs-toggle="pill" href="#tab-1">For Sell</a>
+          </li>
+          <li class="nav-item me-2">
+            <a class="btn btn-outline-primary" data-bs-toggle="pill" href="#tab-2">For Rent</a>
+          </li>
+        </ul>
+      </div>
+      <div class="tab-content">
+        <div id="tab-1" class="tab-pane fade show p-0 active">
+          <div class="container mt-2">
+            <div class="row">
+              <div class="col-md image-at">
+                <a href="house.html" style="text-decoration: none;">
+                  <div class="position-relative">
+                    <img class="category-description img-fluid" src="buy1.jpeg" alt="hello">
+                    <div class="image-text bg-success">Buy</div>
+                  </div>
+                  <div class="item">
+                    <h2 class="text-success textpart">Kaveri soham Vivanta</h2>
+                    <h4 class="my-4 textpart">3BHK Apartment, Shilaj, ahmedabad </h4>
+                    <h5 class="textpart">80.01-97.74 Lacs</h5>
+                  </div>
+                </a>
+              </div>
+              <div class="col-md image-at">
+                <a href="houseb2.html" style="text-decoration: none;">
+                  <div class="position-relative">
+                    <img class="category-description img-fluid" src="buy2.jpeg" alt="hello">
+                    <div class="image-text bg-success">Buy</div>
+                  </div>
+                  <div class="item">
+                    <h2 class="text-success textpart">Madhav opulences </h2>
+                    <h4 class="my-4 textpart">4BHK Apartment, vesu, surat</h4>
+                    <h5 class="textpart">97.74 Lacs-1.2 Cr</h5>
+                  </div>
+                </a>
+              </div>
+              <div class="col-md image-at">
+                <a href="houseb3.html" style="text-decoration: none;">
+                  <div class="position-relative">
+                    <img class="category-description img-fluid" src="buy3.jpg" alt="hello">
+                    <div class="image-text bg-success">Buy</div>
+                  </div>
+                  <div class="item">
+                    <h2 class="text-success textpart">Courtyard by Marriott</h2>
+                    <h4 class="my-4 textpart">2BHK Apartment, Savli, Vadodara</h4>
+                    <h5 class="textpart">80.01-97.74 Lacs</h5>
+                  </div>
+              </div>
+            </div>
+            </a>
+          </div>
+        </div>
+        <div id="tab-2" class="tab-pane fade show p-0">
+          <div class="container mt-2">
+            <div class="row">
+              <div class="col-md image-at">
+                <a href="houser3.html" style="text-decoration: none;">
+                  <div class="position-relative">
+                    <img class="category-description img-fluid" src="rent1.jpg" alt="hello">
+                    <div class="image-text bg-success">Rent</div>
+                  </div>
+                  <div class="item">
+                    <h2 class="text-success textpart">Surya Signature</h2>
+                    <h4 class="my-4 textpart">5 BHK Apartment, Vesu, Surat</h4>
+                    <h5 class="textpart">70,000/month</h5>
+                  </div>
+                </a>
+              </div>
+              <div class="col-md image-at">
+                <a href="houser3.html" style="text-decoration: none;">
+                  <div class="position-relative">
+                    <img class="category-description img-fluid" src="buy3.jpg" alt="hello">
+                    <div class="image-text bg-success">Rent</div>
+                  </div>
+                  <div class="item">
+                    <h2 class="text-success textpart">Courtyard by Marriott</h2>
+                    <h4 class="my-4 textpart">2BHK Apartment, Savli, Vadodara</h4>
+                    <h5 class="textpart">40,000/month</h5>
+                  </div>
+                </a>
+              </div>
+              <div class="col-md image-at">
+                <a href="houser1.html" style="text-decoration: none;">
+                  <div class="position-relative">
+                    <img class="category-description img-fluid" src="rent2.jpeg" alt="hello">
+                    <div class="image-text bg-success">Rent</div>
+                  </div>
+                  <div class="item">
+                    <h2 class="text-success textpart">Rajshree Samvar 2</h2>
+                    <h4 class="my-4 textpart">3BHK Apartment, science city, Ahmedabad</h4>
+                    <h5 class="textpart">40,000/month</h5>
+                  </div>
+                </a>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <div class="container my-5" id="team">
+          <div class="container">
+            <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+              <h1 class="mb-3">Our team</h1>
+              <p>Explore our team unparalleled expertise in housing websites, setting the standard for excellence and
+                innovation in the industry.</p>
+            </div>
+            <div class="row g-4">
+              <div class="col-md">
+                <div class="rounded overflow-hidden">
+                  <img class="img-fluid" src="team-1.png" alt="">
+                  <div class="text-center p-4 mt-3">
+                    <h2 class="fw-bold text-success">Jay sharma</h2>
+                    <h4>Manager</h4>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md">
+                <div class="rounded overflow-hidden">
+                  <img class="img-fluid" src="team-2.jpg" alt="">
+                  <div class="text-center p-4 mt-3">
+                    <h2 class="fw-bold text-success">Amit Modi</h2>
+                    <h4>Marketing Specialist</h4>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md">
+                <div class="rounded overflow-hidden">
+                  <img class="img-fluid" src="team-3.jpg" alt="">
+                  <div class="text-center p-4 mt-3">
+                    <h2 class="fw-bold text-success">kia roy</h2>
+                    <h4>Property Manage</h4>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md">
+                <div class="rounded overflow-hidden">
+                  <img class="img-fluid" src="team-4.jpg" alt="">
+                  <div class="text-center p-4 mt-3">
+                    <h2 class="fw-bold text-success">yash roy</h2>
+                    <h4>Leasing Agent</h4>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+  </section>
+  <footer id="contact">
+    <div class="jou-container">
+      <div class="row">
+        <div class="col-md-12 col-lg">
+          <img src="dekho.jpeg.jpg" class="abc" style="margin-bottom: 30px;">
+          <h3>+94257285475</h3>
+          <p style="font-size: 24px;">GharDekho@gmail.com</p>
+          <!-- Adjusted font size for better readability on small screens -->
+          <h3>21,street,surat</h3>
+          <div class="social-icons">
+            <img src="twitter.jpg" class="rounded-circle">
+            <img src="facebook.png" class="rounded-circle">
+            <img src="instagram.jpeg" class="rounded-circle">
+            <img src="youtube.png" class="rounded-circle">
+          </div>
+        </div>
+        <div class="col-md-12 col-lg">
+          <h3>Our properties</h3>
+          <div class="image-grid">
+            <img src="property-4.jpg" alt="Image 1">
+            <img src="property-5.jpg" alt="Image 2">
+            <img src="pexels-binyamin-mellish-106399.jpg" alt="Image 3">
+            <img src="pexels-sebastian-srensen-731082.jpg" alt="Image 4">
+            <img src="house1.avif" alt="Image 5">
+            <img src="house2.avif" alt="Image 6">
+          </div>
+        </div>
+      </div>
+      <div style="text-align: center;margin-top: 50px;">© 2024 GHAR DEKHO TEAM. All rights reserved. Sitemap | Real
+        Estate Website Design by Agent Image</div>
+      <p style="margin: 50px;">Compass is a real estate broker licensed by the State of California and abides by Equal
+        Housing Opportunity laws. License Number 01527235. All material presented herein is intended for informational
+        purposes only and is compiled from sources deemed reliable but has not been verified. Changes in price,
+        condition, sale or withdrawal may be made without notice. No statement is made as to the accuracy of any
+        description. All measurements and square footage are approximate. If your property is currently listed for sale
+        this is not a solicitation.</p>
+    </div>
+  </footer><script src="script.js"></script>
+</body>
+
+</html>

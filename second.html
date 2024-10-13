@@ -1,0 +1,417 @@
+<!-- Project title      : GharDekho
+     Enrollment number  : 22002171410064
+     Date               : 30, march, 2024
+     Subject            : Full stack development(Frontend)-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <style>
+    .card {
+      overflow: hidden;
+      height: 380px;
+    }
+
+    .card-overlay {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+      color: #fff;
+      text-align: center;
+      transform: translateY(100%);
+      font-size: 25px;
+      transition: transform 0.5s;
+    }
+
+    .card-overlay a {
+      margin-bottom: 20px; /* Adjust the margin as needed */
+      display: block; /* Make links block-level for better spacing */
+      color: white; /* Set link color */
+      text-decoration: underline; /* Remove underline */
+    }
+
+    .card-overlay a:hover {
+      color: red; /* Set link color on hover */
+    }
+
+    .abc {
+      margin: 50px;
+    }
+
+    .card:hover .card-overlay {
+      transform: translateY(0);
+    }
+    
+      .pho-text
+      {
+        color: #6bd17f;
+        font-size: 30px;
+        text-align: center;
+        padding: 5px;
+      }
+      .category-description {
+      width: 100%;
+      height: 280px;
+      border-radius: 20px;
+      margin-bottom: 1rem; /* Add some space between the image and the card */
+      transform: translateY(2.2rem);
+      position: relative;
+    }
+
+    .image-text {
+      position: absolute;
+      top: 50px; /* Adjust this value to position the text */
+      left: 20px; /* Adjust this value to position the text */
+      color: white;
+      font-size: 16px;
+      padding: 8px;
+      border-radius: 15px;
+      font-weight: bold;
+      z-index: 1; /* Ensure text appears above the image */
+    }
+
+    .item {
+      background-color: rgba(255, 255, 255, 0.5);
+      width: calc(100% - calc(2.9rem));
+      max-width: 580px;
+      padding: 1.2rem;
+      top: -6%;
+      margin-left: 25px;
+      flex-direction: column;
+      border-radius: 1.7rem;
+      box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.2);
+      transform: translateY(-1rem);
+      backdrop-filter: blur(1.5rem);
+      position: relative; /* Ensure proper stacking context */
+    }     
+    @media only screen and (max-width: 377px) {
+  .category-description {
+    height: 200px; /* Adjusted height for smaller screens */
+  }
+  
+  .textpart
+  {
+    font-size: 12px;
+  }
+}
+.image-at:hover {
+        transform: scale(1.09); /* Zoom in effect on hover */
+        transition: 1s;
+      }
+.jou-container {
+            padding: 50px;
+            background-color: #212529;
+            color: #fff;
+            text-align: center;
+        }
+        .jou-container .abc {
+            width: 200px; /* Adjust width as needed */
+            height: 200px; /* Adjust height as needed */
+            border-radius: 50%;
+            margin: auto; /* Center image */
+            display: block; /* Correct display */
+        }
+        
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Responsive grid */
+            grid-gap: 10px;
+            margin-top: 20px;
+        }
+        .image-grid img {
+            width: 100%;
+            display: block;
+            height: auto; /* Maintain aspect ratio */
+        }
+        .social-icons {
+            margin-top: 30px;
+            justify-content: center; /* Center icons */
+            display: flex; /* Align icons inline */
+            flex-wrap: wrap; /* Wrap icons on small screens */
+        }
+        .social-icons img {
+            width: 40px;
+            margin: 5px; /* Adjust spacing around icons */
+        }
+
+
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light shadow fixed-top m-2">
+    <div class="container">
+      <a class="navbar-brand" href="#"><img src="HousingLogo2.jpg" class="rounded-pill" width="40px"></a>
+      <h5>Ghar dekho</h5>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="abc.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="abc.html">Team</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="abc.html">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+<div class="container mt-3">
+  <div class="row">
+    <div class="col-md">
+        <h2 class="text-center mb-4 text-success" style="color: #6bd17f; background-color: #ecf0f1; margin-top: 80px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); transition: background-color 0.3s;">Choose City Areas for Homes.</h2>
+        <p class="text-center">Explore specific areas within the cities to find your ideal home. Click on the links below to discover more about each area.</p>
+    </div>
+</div>
+  <div class="row">
+    <div class="col-md">
+      <div class="card mb-4" style="height: 380px;">
+        <img class="card-img-top" src="surat.jpg" alt="Card image" style="width: 100%; height: 315px;">
+        <div class="card-overlay">
+          <h1>Surat</h1>
+          <div class="abc">
+            <a href="model1.html">Varachha</a>
+            <a href="model1.html">Sarthana</a>
+            <a href="model1.html">Vesu</a>
+            <a href="model1.html">Kamrej</a>
+          </div>
+        </div>
+        <h4 class="card-title pho-text">Surat</h4>
+      </div>
+    </div>
+    <div class="col-md">
+      <div class="card mb-4" style="height: 380px;">
+        <img class="card-img-top" src="ahmedabad.webp" alt="Card image" style="width: 100%; height: 315px;">
+        <div class="card-overlay">
+          <h1>Ahmedabad</h1>
+          <div class="abc">
+            <a href="model1.html">Science City Road</a>
+            <a href="model1.html">Shilaj</a>
+            <a href="model1.html">Iskon</a>
+            <a href="model1.html">Sarkhej</a>
+          </div>
+        </div>
+        <h4 class="card-title pho-text">Ahmedabad</h4>
+      </div>
+    </div>
+    <div class="col-md">
+      <div class="card mb-4" style="height: 380px;">
+        <img class="card-img-top" src="vadodara.jpg" alt="Card image" style="width: 100%; height: 315px;">
+        <div class="card-overlay">
+          <h1>Vadodara</h1>
+          <div class="abc">
+            <a href="model1.html"></a>
+            <a href="model1.html">Waghodia</a>
+            <a href="model1.html">Savli</a>
+            <a href="model1.html">Atladra</a>
+            <a href="model1.html">Padra</a>
+          </div>
+        </div>
+        <h4 class="card-title pho-text">Vadodara</h4>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md">
+      <div class="card mb-4" style="height: 380px;">
+        <img class="card-img-top" src="rajkort.jpg" alt="Card image" style="width: 100%; height: 315px;">
+        <div class="card-overlay">
+          <h1>Rajkot</h1>
+          <div class="abc">
+            <a href="model1.html">150 Feet Ring Road</a>
+            <a href="model1.html">Kalavad Road</a>
+            <a href="model1.html">Madhapar</a>
+            <a href="model1.html">University Road</a>
+          </div>
+        </div>
+        <h4 class="card-title pho-text">Rajkot</h4>
+      </div>
+    </div>
+    <div class="col-md">
+      <div class="card mb-4" style="height: 380px;">
+        <img class="card-img-top" src="gandhinagar.webp" alt="Card image" style="width: 100%; height: 315px;">
+        <div class="card-overlay">
+          <h1>Gandhinagar</h1>
+          <div class="abc">
+            <a href="model1.html">Gift City</a>
+            <a href="model1.html">Sector 25</a>
+            <a href="model1.html">Infocity</a>
+            <a href="model1.html">Sargasan</a>
+          </div>
+        </div>
+        <h4 class="card-title pho-text">Gandhinagar</h4>
+      </div>
+    </div>
+    <div class="col-md">
+      <div class="card mb-4" style="height: 380px;">
+        <img class="card-img-top" src="Anand.jpg" alt="Card image" style="width: 100%; height: 315px;">
+        <div class="card-overlay">
+          <h1>Anand</h1>
+          <div class="abc">
+            <a href="model1.html"></a>
+            <a href="model1.html">Vallabh Vidhyanagar</a>
+            <a href="model1.html"> Karamsad</a>
+            <a href="model1.html">Bakrol Vadtal Road</a>
+            <a href="model1.html"> Lambhvel </a>
+          </div>
+        </div>
+        <h4 class="card-title pho-text">Anand</h4>
+      </div>
+    </div>
+  </div>
+</div>
+<h1 class="mb-3 my-5">Recommended Properties</h1>
+    <div class="row">
+      <div class="col-md">
+        <p>Explore your housing options with us! Whether you're looking to own your dream home or experience the flexibility of renting, we offer a diverse range of properties to suit your lifestyle and preferences.</p>
+      </div>
+      <div class="col-md">
+        <ul class="nav nav-pills  justify-content-end mb-5">
+            <li class="nav-item me-2">
+                <a class="btn btn-outline-primary active" data-bs-toggle="pill" href="#tab-1">For Buy</a>
+            </li>
+            <li class="nav-item me-2">
+                <a class="btn btn-outline-primary" data-bs-toggle="pill" href="#tab-2">For Rent</a>
+            </li>
+        </ul>
+      </div>
+      <div class="tab-content" id="recommended-property">
+        <div id="tab-1" class="tab-pane fade show p-0 active">
+          <div class="container mt-2">
+            <div class="row">
+              <div class="col-md image-at">
+                <a href="house.html" style="text-decoration: none;">
+                <div class="position-relative">
+                  <img class="category-description img-fluid" src="buy1.jpeg" alt="hello">
+                  <div class="image-text bg-success">Buy</div>
+                </div>
+                <div class="item">
+                  <h2 class="text-success textpart">Kaveri soham Vivanta</h2>
+                  <h4 class="my-4 textpart">3BHK Apartment, Shilaj, ahmedabad </h4>
+                  <h5 class="textpart">80.01-97.74 Lacs</h5>
+                </div>
+              </a>
+              </div>
+              <div class="col-md image-at">
+                <a href="houseb2.html" style="text-decoration: none;">
+                <div class="position-relative">
+                  <img class="category-description img-fluid" src="buy2.jpeg" alt="hello">
+                  <div class="image-text bg-success">Buy</div>
+                </div>
+                <div class="item">
+                  <h2 class="text-success textpart">Madhav opulences </h2>
+                  <h4 class="my-4 textpart">4BHK Apartment, vesu, surat</h4>
+                  <h5 class="textpart">97.74 Lacs-1.2 Cr</h5>
+                </div>
+                </a>
+              </div>
+              <div class="col-md image-at">
+                <a href="houseb3.html" style="text-decoration: none;">
+                <div class="position-relative">
+                  <img class="category-description img-fluid" src="buy3.jpg" alt="hello">
+                  <div class="image-text bg-success">Buy</div>
+                </div>
+                <div class="item">
+                  <h2 class="text-success textpart">Courtyard by Marriott</h2>
+                  <h4 class="my-4 textpart">2BHK Apartment, Savli, Vadodara</h4>
+                  <h5 class="textpart">80.01-97.74 Lacs</h5>
+                </div>
+              </div>
+            </div>
+          </a>
+          </div>
+        </div>
+        <div id="tab-2" class="tab-pane fade show p-0">
+          <div class="container mt-2">
+            <div class="row">
+              <div class="col-md image-at">
+                <a href="houser3.html" style="text-decoration: none;">
+                <div class="position-relative">
+                  <img class="category-description img-fluid" src="rent1.jpg" alt="hello">
+                  <div class="image-text bg-success">Rent</div>
+                </div>
+                <div class="item">
+                  <h2 class="text-success textpart">Surya Signature</h2>
+                  <h4 class="my-4 textpart">5 BHK  Apartment, Vesu, Surat</h4>
+                  <h5 class="textpart">70,000/month</h5>
+                </div>
+                </a>
+              </div>
+              <div class="col-md image-at">
+                <a href="houser3.html" style="text-decoration: none;">
+                <div class="position-relative">
+                  <img class="category-description img-fluid" src="buy3.jpg" alt="hello">
+                  <div class="image-text bg-success">Rent</div>
+                </div>
+                <div class="item">
+                  <h2 class="text-success textpart">Courtyard by Marriott</h2>
+                  <h4 class="my-4 textpart">2BHK Apartment, Savli, Vadodara</h4>
+                  <h5 class="textpart">40,000/month</h5>
+                </div>
+                </a>
+                </div>
+                <div class="col-md image-at">
+                  <a href="houser1.html" style="text-decoration: none;">
+                  <div class="position-relative">
+                    <img class="category-description img-fluid" src="rent2.jpeg" alt="hello">
+                    <div class="image-text bg-success">Rent</div>
+                  </div>
+                  <div class="item">
+                    <h2 class="text-success textpart">Rajshree Samvar 2</h2>
+                    <h4 class="my-4 textpart">3BHK Apartment, science city, Ahmedabad</h4>
+                    <h5 class="textpart">40,000/month</h5>
+                  </div>
+                </a>
+                </div>
+            </div>
+          </div>
+      </div>
+      <footer id="contact">
+        <div class="jou-container">
+          <div class="row">
+              <div class="col-md-12 col-lg">
+                  <img src="dekho.jpeg.jpg" class="abc" style="margin-bottom: 30px;">
+                  <h3>+94257285475</h3>
+                  <p style="font-size: 24px;">GharDekho@gmail.com</p>
+                  <h3>21,street,surat</h3>
+                  <div class="social-icons">
+                      <img src="twitter.jpg" class="rounded-circle">
+                      <img src="facebook.png" class="rounded-circle">
+                      <img src="instagram.jpeg" class="rounded-circle">
+                      <img src="youtube.png" class="rounded-circle">
+                  </div>
+              </div>
+              
+              <div class="col-md-12 col-lg">
+                  <h3>Our properties</h3>
+                  <div class="image-grid">
+                      <img src="property-4.jpg" alt="Image 1">
+                      <img src="property-5.jpg" alt="Image 2">
+                      <img src="pexels-binyamin-mellish-106399.jpg" alt="Image 3">
+                      <img src="pexels-sebastian-srensen-731082.jpg" alt="Image 4">
+                      <img src="house1.avif" alt="Image 5">
+                      <img src="house2.avif" alt="Image 6">
+                  </div>
+              </div>
+          </div>
+          <div style="text-align: center;margin-top: 50px;">© 2024 GHAR DEKHO TEAM. All rights reserved. Sitemap | Real Estate Website Design by Agent Image</div>
+          <p style="margin: 50px;">Compass is a real estate broker licensed by the State of California and abides by Equal Housing Opportunity laws. License Number 01527235. All material presented herein is intended for informational purposes only and is compiled from sources deemed reliable but has not been verified. Changes in price, condition, sale or withdrawal may be made without notice. No statement is made as to the accuracy of any description. All measurements and square footage are approximate. If your property is currently listed for sale this is not a solicitation.</p>
+      </div>
+              </footer>
+      
+</body>
+</html>

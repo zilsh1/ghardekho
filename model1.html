@@ -1,0 +1,461 @@
+<!-- Project title      : GharDekho
+     Enrollment number  : 22002171410064
+     Date               : 30, march, 2024
+     Subject            : Full stack development(Frontend)-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real Estate Website</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+      .video-container {
+          position: relative;
+          width: 100%;
+          padding-top: 40%; /* 16:9 aspect ratio */
+          border-radius: 20px;
+          overflow: hidden;
+      }
+
+      .video-container video {
+          position: absolute;
+          width: 100%;
+          top: 0;
+          left: 0;
+          object-fit: cover;
+      }
+
+      .tab-content {
+          padding-top: 20px;
+      }
+      .col-md-4:hover .category-description,
+    .col-md-4:hover .item {
+      transform: translateY(0.5rem);
+    }
+      .category-description {
+          width: 100%;
+          height: 280px;
+          border-radius: 20px;
+          margin-bottom: 1rem;
+          transform: translateY(2.2rem);
+          position: relative;
+      }
+
+      .image-text {
+          position: absolute;
+          top: 50px;
+          left: 20px;
+          color: white;
+          font-size: 16px;
+          padding: 8px;
+          border-radius: 15px;
+          font-weight: bold;
+          z-index: 1;
+      }
+
+      .item {
+          background-color: rgba(255, 255, 255, 0.5);
+          width: calc(100% - calc(2.9rem));
+          max-width: 580px;
+          padding: 1.2rem;
+          margin-left: 25px;
+          flex-direction: column;
+          border-radius: 1.7rem;
+          box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.2);
+          transform: translateY(-1rem);
+          backdrop-filter: blur(1.5rem);
+          position: relative;
+      }
+
+      @media only screen and (max-width: 377px) {
+          .category-description {
+              height: 200px;
+          }
+      
+          .textpart {
+              font-size: 12px;
+          }
+      }
+     /* Add active classes for "For Buy" and "For Rent" buttons */
+.btn-buy.active,
+.btn-rent.active {
+    background-color: #28a745; /* Green background color */
+    color: #fff; /* Text color white */
+}
+
+/* Adjusted styles for "For Buy" and "For Rent" buttons */
+.btn-buy,
+.btn-rent {
+    color: #28a745; /* Text color green */
+    background-color: transparent; /* Transparent background */
+    border: 2px solid #28a745; /* Green border */
+    border-radius: 20px;
+    padding: 8px 20px; /* Adjust padding as needed */
+    transition: all 0.3s ease;
+    text-decoration: none; /* Remove default underline */
+}
+
+/* Hover effect for "For Buy" and "For Rent" buttons */
+.btn-buy:hover,
+.btn-rent:hover {
+    background-color: #28a745; /* Change background color to green on hover */
+    color: #fff; /* Change text color to white on hover */
+}
+
+      .nav-bar-black {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 90%;
+          max-width: 800px;
+          background-color: rgba(3, 11, 4, 0.582);
+          padding: 20px;
+          text-align: center;
+          border-radius: 20px;
+          box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+          z-index: 2;
+      }
+
+      .atvideo {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          z-index: 2;
+          transform: translate(-50%, -50%);
+          width: 90%;
+          max-width: 400px;
+      }
+
+
+      @media (max-width: 320px) {
+          .nav-pills .nav-link {
+              font-size: 14px;
+              padding: 0.5rem 1rem;
+          }
+      }
+
+      .nav-pills .nav-link {
+          border-radius: 20px;
+          margin-right: 10px;
+          transition: all 0.3s ease;
+      }
+      .jumbotron {
+            background-color: #f8f9fa; /* Background color similar to the header */
+        }
+
+        .jumbotron h1 {
+            font-weight: bolder;
+            color: #198754; /* Green color */
+        }
+
+        .jumbotron p {
+            color: #198754; /* Green color */
+        }
+        .jou-container {
+            padding: 50px;
+            background-color: #212529;
+            color: #fff;
+            text-align: center;
+        }
+        .jou-container .abc {
+            width: 200px; /* Adjust width as needed */
+            height: 200px; /* Adjust height as needed */
+            border-radius: 50%;
+            margin: auto; /* Center image */
+            display: block; /* Correct display */
+        }
+  </style>
+</head>
+<body>
+    <section class="">
+        <div class="video-container">
+          <video src="video.mp4" autoplay muted loop></video>
+            <div class="atvideo">
+                <h4 style="text-align: center;font-size: 40px;font-style: italic;" class="text-white">Select option of buy and rent</h4>
+                <ul class="nav nav-pills justify-content-center ">
+                    <li class="nav-item ">
+                      <a class="btn btn-sm btn-tranparent btn-buy active px-4 py-3 mx-4" data-bs-toggle="pill" href="#tab-1">For Buy</a>
+                    </li>
+                    <li class="nav-item ">
+                      <a class="btn btn-sm btn-tranparent btn-rent px-4 py-3" data-bs-toggle="pill" href="#tab-2">For Rent</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="tab-content">
+            <div id="tab-1" class="tab-pane fade show p-0 active">
+                <h1 style="text-align: center;font-style: italic;">Buy your properties</h1>
+                <div class="container mt-5">
+                    <div class="row">
+                      <div class="col-md-4">
+                        <a href="house.html" style="text-decoration: none;">
+                        <div class="position-relative">
+                          <img class="category-description img-fluid" src="buy1.jpeg" alt="hello">
+                          <div class="image-text bg-success">Buy</div>
+                        </div>
+                        <div class="item">
+                          <h2 class="text-success">Kaveri soham Vivanta</h2>
+                          <h4 class="my-4">3BHK Apartment, Shilaj, ahmedabad </h4>
+                          <h5>80.01-97.74 Lacs</h5>
+                        </div>
+                    </a>
+                      </div>
+                      <div class="col-md-4">
+                        <a href="houseb2.html" style="text-decoration: none;">
+                        <div class="position-relative">
+                          <img class="category-description img-fluid" src="buy2.jpeg" alt="hello">
+                          <div class="image-text bg-success">Buy</div>
+                        </div>
+                        <div class="item">
+                          <h2 class="text-success">Madhav opulences </h2>
+                          <h4 class="my-4">4BHK Apartment, vesu, surat</h4>
+                          <h5>97.74 Lacs-1.2 Cr</h5>
+                        </div>
+                    </a>
+
+                      </div>
+                      <div class="col-md-4">
+                        <a href="houseb3.html" style="text-decoration: none;">
+                        <div class="position-relative">
+                          <img class="category-description img-fluid" src="buy3.jpg" alt="hello">
+                          <div class="image-text bg-success">Buy</div>
+                        </div>
+                        <div class="item">
+                          <h2 class="text-success">Courtyard by Marriott</h2>
+                          <h4 class="my-4">2BHK Apartment, Savli, Vadodara</h4>
+                          <h5>80.01-97.74 Lacs</h5>
+                        </div>
+                    </a>
+                      </div>
+                      <div class="col-md-4">
+                        <a href="houseb3.html" style="text-decoration: none;">
+
+                        <div class="position-relative">
+                          <img class="category-description img-fluid" src="buy4.jpeg" alt="hello">
+                          <div class="image-text bg-success">Buy</div>
+                        </div>
+                        <div class="item">
+                          <h2 class="text-success">Shiv Elite</h2>
+                          <h4 class="my-4">3BHK, Sama, Vadodara</h4>
+                          <h5>1-1.5 cr</h5>
+                        </div>
+                        </a>
+                      </div>
+                      <div class="col-md-4">
+                        <a href="houseb3.html" style="text-decoration: none;">
+                        <div class="position-relative">
+                          <img class="category-description img-fluid" src="buy5.jpg" alt="hello">
+                          <div class="image-text bg-success">Buy</div>
+                        </div>
+                        <div class="item">
+                          <h2 class="text-success">Rangoli Greens</h2>
+                          <h4 class="my-4">3BHK Apartment, Subhanpura, Vadodara</h4>
+                          <h5>65.43-78.92 Lacs</h5>
+                        </div>
+                        </a>
+                      </div>
+                      <div class="col-md-4">
+                        <a href="houseb3.html" style="text-decoration: none;">
+                        <div class="position-relative">
+                            
+                          <img class="category-description img-fluid" src="buy6.jpg" alt="hello">
+                          <div class="image-text bg-success">Buy</div>
+                        </div>
+                        <div class="item">
+                          <h2 class="text-success">The Bliss Residency</h2>
+                          <h4 class="my-4">2BHK Apartment, Waghodia, Vadodara</h4>
+                          <h5>40.25-50.89 Lacs</h5>
+                        </div>
+                        </a>
+                      </div>
+                      <div class="col-md-4">
+                        <a href="houseb3.html" style="text-decoration: none;">
+                        <div class="position-relative">
+                          <img class="category-description img-fluid" src="buy7.png" alt="hello">
+                          <div class="image-text bg-success">Buy</div>
+                        </div>
+                        <div class="item">
+                          <h2 class="text-success">Green County</h2>
+                          <h4 class="my-4">3BHK Apartment, Ajwa Road, Vadodara</h4>
+                          <h5>60.12-72.45 Lacs</h5>
+                        </div>
+                        </a>
+                      </div>
+                      <div class="col-md-4">
+                        <a href="houseb3.html" style="text-decoration: none;">
+                        <div class="position-relative">
+                          <img class="category-description img-fluid" src="buy8.jpg" alt="hello">
+                          <div class="image-text bg-success">Buy</div>
+                        </div>
+                        <div class="item">
+                          <h2 class="text-success">Sai Arpan Residency</h2>
+                          <h4 class="my-4">2BHK Apartment, Satellite, Ahmedabad</h4>
+                          <h5>50.65-63.78 Lacs</h5>
+                        </div>
+                        </a>
+                      </div>
+                      <div class="col-md-4">
+                        <a href="houseb3.html" style="text-decoration: none;">
+                        <div class="position-relative">
+                          <img class="category-description img-fluid" src="buy9.jpg" alt="hello">
+                          <div class="image-text bg-success">Buy</div>
+                        </div>
+                        <div class="item">
+                          <h2 class="text-success">Shivalik Arcade</h2>
+                          <h4 class="my-4">3BHK Apartment, Vastrapur,Ahmedabad</h4>
+                          <h5>75.32-85.79 Lacs</h5>
+                        </div>
+                        </a>
+                      </div>
+                
+                    </div>
+                  </div>
+          </div>
+            <div id="tab-2" class="tab-pane fade show p-0">
+                <h1 style="text-align: center;font-style: italic;">Rent your properties</h1>
+                <div class="container mt-5">
+                    <div class="row">
+                      <div class="col-md-4 image-at">
+                        <a href="houser1.html" style="text-decoration: none;">
+                        <div class="position-relative">
+                          <img class="category-description img-fluid" src="rent1.jpg" alt="hello">
+                          <div class="image-text bg-success">Rent</div>
+                        </div>
+                        <div class="item">
+                          <h2 class="text-success textpart">Surya Signature</h2>
+                          <h4 class="my-4 textpart">5 BHK  Apartment, Vesu, Surat</h4>
+                          <h5 class="textpart">70,000/month</h5>
+                        </div>
+                        </a>
+                      </div>
+                      <div class="col-md-4">
+                        <a href="houseb3.html" style="text-decoration: none;">
+                        <div class="position-relative">
+                          <img class="category-description img-fluid" src="buy2.jpeg" alt="hello">
+                          <div class="image-text bg-success">Rent</div>
+                        </div>
+                        <div class="item">
+                          <h2 class="text-success">Madhav opulences </h2>
+                          <h4 class="my-4">4BHK Apartment, vesu, surat</h4>
+                          <h5>70,000|month</h5>
+                        </div>
+                        </a>
+                      </div>
+                      <div class="col-md-4">
+                        <a href="houseb3.html" style="text-decoration: none;">
+                        <div class="position-relative">
+                          <img class="category-description img-fluid" src="buy3.jpg" alt="hello">
+                          <div class="image-text bg-success">Rent</div>
+                        </div>
+                        <div class="item">
+                          <h2 class="text-success">Courtyard by Marriott</h2>
+                          <h4 class="my-4">2BHK Apartment, Savli, Vadodara</h4>
+                          <h5>70,000|month</h5>
+                        </div>
+                        </a>
+                      </div>
+                      <div class="col-md-4">
+                        <a href="houseb3.html" style="text-decoration: none;">
+                        <div class="position-relative">
+                          <img class="category-description img-fluid" src="buy4.jpeg" alt="hello">
+                          <div class="image-text bg-success">Rent</div>
+                        </div>
+                        <div class="item">
+                          <h2 class="text-success">Shiv Elite</h2>
+                          <h4 class="my-4">3BHK, Sama, Vadodara</h4>
+                          <h5>40,000|month</h5>
+                        </div>
+                        </a>
+                      </div>
+                      <div class="col-md-4">
+                        <a href="houseb3.html" style="text-decoration: none;">
+                        <div class="position-relative">
+                          <img class="category-description img-fluid" src="buy5.jpg" alt="hello">
+                          <div class="image-text bg-success">Rent</div>
+                        </div>
+                        <div class="item">
+                          <h2 class="text-success">Rangoli Greens</h2>
+                          <h4 class="my-4">3BHK Apartment, Subhanpura, Vadodara</h4>
+                          <h5>60,000|month</h5>
+                        </div>
+                        </a>
+                      </div>
+                      <div class="col-md-4">
+                        <a href="houseb3.html" style="text-decoration: none;">
+                        <div class="position-relative">
+                          <img class="category-description img-fluid" src="buy6.jpg" alt="hello">
+                          <div class="image-text bg-success">Rent</div>
+                        </div>
+                        <div class="item">
+                          <h2 class="text-success">The Bliss Residency</h2>
+                          <h4 class="my-4">2BHK Apartment, Waghodia, Vadodara</h4>
+                          <h5>20,000|months</h5>
+                        </div>
+                        </a>
+                      </div>
+                      <div class="col-md-4">
+                        <a href="houseb3.html" style="text-decoration: none;">
+                        <div class="position-relative">
+                          <img class="category-description img-fluid" src="buy7.png" alt="hello">
+                          <div class="image-text bg-success">Rent</div>
+                        </div>
+                        <div class="item">
+                          <h2 class="text-success">Green County</h2>
+                          <h4 class="my-4">3BHK Apartment, Ajwa Road, Vadodara</h4>
+                          <h5>30,000|month</h5>
+                        </div>
+                        </a>
+                      </div>
+                      <div class="col-md-4">
+                        <a href="houseb3.html" style="text-decoration: none;">
+                        <div class="position-relative">
+                          <img class="category-description img-fluid" src="buy8.jpg" alt="hello">
+                          <div class="image-text bg-success">Rent</div>
+                        </div>
+                        <div class="item">
+                          <h2 class="text-success">Sai Arpan Residency</h2>
+                          <h4 class="my-4">2BHK Apartment, Satellite, Ahmedabad</h4>
+                          <h5>10,000|month</h5>
+                        </div>
+                        </a>
+                      </div>
+                      <div class="col-md-4">
+                        <a href="houseb3.html" style="text-decoration: none;">
+                        <div class="position-relative">
+                          <img class="category-description img-fluid" src="buy9.jpg" alt="hello">
+                          <div class="image-text bg-success">Rent</div>
+                        </div>
+                        <div class="item">
+                          <h2 class="text-success">Shivalik Arcade</h2>
+                          <h4 class="my-4">3BHK Apartment, Vastrapur,Ahmedabad</h4>
+                          <h5>50,000|month</h5>
+                        </div>
+                        </a>
+                      </div>
+                
+                    </div>
+                  </div>
+            </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+      <div class="jou-container">
+        <div class="row">
+            <div class="col-md-12 col-lg">
+                <img src="dekho.jpeg.jpg" class="abc" style="margin-bottom: 30px;">
+            </div>
+        <div style="text-align: center;margin-top: 50px;">© 2024 GHAR DEKHO TEAM. All rights reserved. Sitemap | Real Estate Website Design by Agent Image</div>
+        <p>Compass is a real estate broker licensed by the State of California and abides by Equal Housing Opportunity laws. License Number 01527235. All material presented herein is intended for informational purposes only and is compiled from sources deemed reliable but has not been verified. Changes in price, condition, sale or withdrawal may be made without notice. No statement is made as to the accuracy of any description. All measurements and square footage are approximate. If your property is currently listed for sale this is not a solicitation.</p>
+    </div>
+            </footer>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.9.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
